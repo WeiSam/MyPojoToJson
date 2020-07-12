@@ -1,0 +1,67 @@
+<idea-plugin>
+  <id>MyPojoToJson</id>
+  <name>MyPojoToJson</name>
+  <version>1.0.6</version>
+  <vendor email="18814383181@163.com" url="http://www.qbb6.com">ZWM update from QBB</vendor>
+
+  <description><![CDATA[
+      Java Class to json plugin<br>
+      <em>use way: right click choose BuildJsonWithType or BuildJson or BuildJsonForYapi</em>
+      <em>dubbo use way: selected method name ,right,click choose BuildJsonForDubbo</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      - 1.0.0:<br>
+      BuildJson,BuildJsonWithType,BuildJsonForYapi<br>
+      - 1.0.1:<br>
+      fixbug:"\t"<br>
+      fixbug:no remark <br>
+      - 1.0.2:<br>
+      fixbug for  BigDecimal<br>
+      - 1.0.3:<br>
+      add BuildJsonForDubbo <br>
+      - 1.0.4:<br>
+      fixbug<br>
+      - 1.0.5:<br>
+      更新支持类型,过滤static,final <br>
+      <br>
+      - 1.0.6:<br>
+      fixbug:兼容2020 IDEA <br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="BuildJsonWithType" class="BuildJsonWithType" text="BuildJsonWithType" description="BuildJsonWithType">
+      <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    </action>
+    <action id="BuildJson" class="BuildJson" text="BuildJson" description="BuildJson">
+      <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    </action>
+    <action id="BuildJsonForYapi" class="BuildJsonForYapi" text="BuildJsonForYapi" description="BuildJsonForYapi">
+      <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    </action>
+    <action id="BuildJsonForDubbo" class="BuildJsonForDubbo" text="BuildJsonForDubbo"
+            description="BuildJsonForDubbo">
+      <add-to-group group-id="EditorLangPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>MyPojoToJson</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
